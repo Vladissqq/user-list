@@ -10,21 +10,6 @@
     text-align: center;
   }
 
-  &__search {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 1rem;
-
-    input {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 0.5rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 0.25rem;
-    }
-  }
-
   &__list {
     width: 100%;
     max-width: 600px;

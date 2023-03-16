@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
 import { RootState } from "../../redux/reducers";
@@ -6,6 +6,7 @@ import ErrorPreview from "../ErrorPreview/Error";
 import Preloader from "../Preloader/Preloader";
 import UserListItem from "../UserListItem/UserListItem";
 import "./index.scss";
+import Search from "../Search/Search";
 
 const UserList = () => {
   const { getUsers } = useActions();
@@ -17,8 +18,10 @@ const UserList = () => {
 
   useEffect(() => {
     getUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
@@ -32,14 +35,7 @@ const UserList = () => {
 
   return (
     <div className="user-list">
-      <div className="user-list__search">
-        <input
-          type="text"
-          placeholder="Search users..."
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-      </div>
+      <Search value={searchTerm} handleSearch={handleSearch} />
       {loading && <Preloader />}
       {error && <ErrorPreview error={error} />}
       {users && (
