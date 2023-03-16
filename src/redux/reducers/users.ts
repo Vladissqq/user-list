@@ -34,10 +34,10 @@ const usersReducer = (
       };
     }
     case ActionType.DELETE_USER: {
+      state.users.filter((user) => user.id !== action.payload);
       return {
-        loading: false,
-        error: undefined,
-        users: action.payload,
+        ...state,
+        users: state.users.filter((user) => user.id !== action.payload),
       };
     }
     default: {

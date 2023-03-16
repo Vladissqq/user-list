@@ -21,3 +21,8 @@ export const getUsers = () => {
     }
   };
 };
+
+export const deleteUser = (id: number) => ({
+  type: ActionType.DELETE_USER,
+  payload: id,
+});

@@ -2,7 +2,7 @@ import { User } from "./../../interfaces/User";
 import { ActionType } from "../actionsList";
 
 export interface UsersState {
-  users?: User[];
+  users: User[];
   loading: boolean;
   error?: string;
 }
@@ -23,7 +23,7 @@ interface GetUsersErrorAction {
 
 interface DeleteUserAction {
   type: ActionType.DELETE_USER;
-  payload: User[];
+  payload: number;
 }
 
 export type UsersAction =
