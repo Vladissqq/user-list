@@ -1,9 +1,11 @@
+import "./index.scss";
+
 interface ErrorPreviewProps {
   error: string;
 }
 
 const ErrorPreview = ({ error }: ErrorPreviewProps) => {
-  return <div>{error}</div>;
+  return <div className="error">{error}</div>;
 };
 
 export default ErrorPreview;
