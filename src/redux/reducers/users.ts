@@ -34,7 +34,6 @@ const usersReducer = (
       };
     }
     case ActionType.DELETE_USER: {
-      state.users.filter((user) => user.id !== action.payload);
       return {
         ...state,
         users: state.users.filter((user) => user.id !== action.payload),
